@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImgComp", "ImgComp\ImgComp.csproj", "{D4EF1C5E-E5B6-4C23-8527-AC3DA0FDAFA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImgCompTest", "ImgCompTest\ImgCompTest.csproj", "{B3FE862C-B76A-4641-BEBC-6E8D083F1714}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4EF1C5E-E5B6-4C23-8527-AC3DA0FDAFA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4EF1C5E-E5B6-4C23-8527-AC3DA0FDAFA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4EF1C5E-E5B6-4C23-8527-AC3DA0FDAFA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4EF1C5E-E5B6-4C23-8527-AC3DA0FDAFA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3FE862C-B76A-4641-BEBC-6E8D083F1714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3FE862C-B76A-4641-BEBC-6E8D083F1714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3FE862C-B76A-4641-BEBC-6E8D083F1714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3FE862C-B76A-4641-BEBC-6E8D083F1714}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F91D9DE-A503-4E9E-AD6A-8A6104A8152C}
+	EndGlobalSection
+EndGlobal
