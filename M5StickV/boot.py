@@ -13,7 +13,7 @@ lcd.init()
 lcd.rotation(2)
 i2c = I2C(I2C.I2C0, freq=400000, scl=28, sda=29)
 
-f = open('/sd/data_assyuku.png.bin','rb')
+f = open('/sd/circle.png.bin','rb')
 data = f.read()
 f.close()
 
