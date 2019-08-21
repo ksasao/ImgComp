@@ -17,14 +17,16 @@ f = open('/sd/circle.png.bin','rb')
 data = f.read()
 f.close()
 
-def draw_data(img, x, y, data):
+def draw_data(img, x:int, y:int, data:bytearray):
     width = data[0] | (data[1]<<8)
     height = data[2] | (data[3]<<8)
     ring_buffer = [0] * 8
     ring_buffer_pointer = 0
     p = 4
     pos = 0
-    while p<len(data):
+    count = len(data)
+
+    while p < count:
         d = data[p] & 0x3F
         s = data[p] >> 6
         if s == 0:
@@ -36,7 +38,7 @@ def draw_data(img, x, y, data):
             for i in range(rl + 1):
                 xx = x + (pos % width)
                 yy = y + (pos // width)
-                col = ring_buffer[(rp + i)%len(ring_buffer)]
+                col = ring_buffer[(rp + i)& 7]
                 img.set_pixel(xx,yy,col)
                 pos = pos + 1
             p = p + 1
@@ -56,7 +58,7 @@ def draw_data(img, x, y, data):
                 yy = y + (pos // width)
                 img.set_pixel(xx,yy,tmp)
                 ring_buffer[ring_buffer_pointer] = tmp
-                ring_buffer_pointer = (ring_buffer_pointer + 1)%len(ring_buffer)
+                ring_buffer_pointer = (ring_buffer_pointer + 1) & 7
                 pos = pos + 1
                 p = p + 2
 
@@ -76,11 +78,14 @@ sensor.set_pixformat(sensor.RGB565)
 sensor.set_framesize(sensor.QVGA) #QVGA=320x240
 sensor.set_windowing((224, 224))
 sensor.run(1)
+clock = time.clock()
 
 try:
     while(True):
         img = sensor.snapshot()
+        clock.tick()
         draw_data(img, 0, 50, data)
+        print(clock.fps())
         lcd.display(img)
 except KeyboardInterrupt:
     sys.exit()
